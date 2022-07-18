@@ -11,6 +11,5 @@
   },
   "exclude": ["node_modules", "__tests__", "__mocks__"],
   "ts-node": {
-    "transpileOnly": true
   }
 }
