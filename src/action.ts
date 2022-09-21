@@ -49,7 +49,6 @@ export async function main () {
       return
     }
 
-
     if (Object.keys(commitlintConfig.rules).length === 0) {
       core.setFailed('no rules. please configure commitlint.')
       return
