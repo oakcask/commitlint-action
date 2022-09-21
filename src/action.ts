@@ -33,12 +33,14 @@ export async function main () {
     core.notice('could not detect pull request number. skipping.')
     return
   }
-
-  await exec('npm install @commitlint/core')
-
   if (pullRequests.hasMore) {
     core.warning(`${event.ref} is associated with too many pull requests.`)
   }
+
+  await exec('npm install @commitlint/core')
+
+  core.notice('loading configuration')
+  const commitlintConfig = await load()
 
   for (const prNum of pullRequests.numbers) {
     const commits = await getPullRequestCommits(gh, { owner, repo, pullRequestNumber: prNum })
@@ -47,7 +49,6 @@ export async function main () {
       return
     }
 
-    const commitlintConfig = await load()
 
     if (Object.keys(commitlintConfig.rules).length === 0) {
       core.setFailed('no rules. please configure commitlint.')
