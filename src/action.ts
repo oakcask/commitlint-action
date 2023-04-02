@@ -1,5 +1,3 @@
-import * as util from 'util'
-import { exec as _exec } from 'child_process'
 import * as core from '@actions/core'
 import * as github from '@actions/github'
 import { PushEvent } from '@octokit/webhooks-types'
@@ -7,8 +5,6 @@ import load from '@commitlint/load'
 import lint from '@commitlint/lint'
 import { formatResult } from '@commitlint/format'
 import { getPullRequestCommits, getPullRequestsByRef } from './query'
-
-const exec = util.promisify(_exec)
 
 export async function main () {
   const token = core.getInput('token', { required: true })
