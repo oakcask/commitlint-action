@@ -1,0 +1,13 @@
+name: commitlint-action
+description: Lint commit messages in pull request
+author: oakcask
+inputs:
+  token:
+    description: GITHUB_TOKEN
+    required: true
+  exclude-commiters:
+    description: a list of commiter email to exclude from lint
+    required: false
+runs:
+  using: node16
+  main: dist/index.js

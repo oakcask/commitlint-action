@@ -1,0 +1,48 @@
+{
+  "name": "commitlint-action",
+  "description": "github action for commitlint",
+  "main": "lib/main.js",
+  "scripts": {
+    "typecheck": "tsc --noEmit",
+    "build": "tsc && ncc build lib/main.js",
+    "format:all": "eslint --fix src/**.ts",
+    "release": "semantic-release",
+    "graphql-codegen": "graphql-codegen --config codegen.yml"
+  },
+  "author": "oakcask",
+  "license": "MIT",
+  "devDependencies": {
+    "@graphql-codegen/cli": "^2.8.1",
+    "@graphql-codegen/introspection": "2.1.1",
+    "@graphql-codegen/typescript": "2.5.1",
+    "@graphql-codegen/typescript-operations": "2.4.2",
+    "@homebound/graphql-typescript-factories": "^2.49.0",
+    "@homebound/graphql-typescript-response-factories": "^2.25.0",
+    "@octokit/webhooks-types": "^6.10.0",
+    "@semantic-release/changelog": "^6.0.1",
+    "@semantic-release/github": "^8.0.4",
+    "@typescript-eslint/eslint-plugin": "^5.23.0",
+    "@typescript-eslint/parser": "^5.23.0",
+    "@vercel/ncc": "^0.33.4",
+    "eslint": "^8.15.0",
+    "eslint-config-standard": "^17.0.0",
+    "eslint-plugin-import": "^2.26.0",
+    "eslint-plugin-jest": "^26.2.1",
+    "eslint-plugin-n": "^15.2.0",
+    "eslint-plugin-promise": "^6.0.0",
+    "semantic-release": "^19.0.3",
+    "typescript": "^4.6.4"
+  },
+  "dependencies": {
+    "@actions/core": "^1.8.1",
+    "@actions/github": "^5.0.2",
+    "@commitlint/core": "^17.0.0",
+    "@octokit/graphql": "^4.8.0",
+    "@swc/core": "^1.2.218",
+    "@swc/helpers": "^0.4.3",
+    "cosmiconfig": "^8.1.3",
+    "cosmiconfig-typescript-loader": "^4.3.0",
+    "ts-node": "^10.9.1",
+    "tunnel": "^0.0.6"
+  }
+}
