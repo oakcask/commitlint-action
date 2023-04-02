@@ -1,6 +1,7 @@
+import 'ts-node'
+import 'cosmiconfig-typescript-loader'
 import '@swc/core'
 import '@commitlint/core'
-import 'cosmiconfig-ts-loader'
 import { main } from './action'
 
 main()
