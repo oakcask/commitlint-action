@@ -37,8 +37,6 @@ export async function main () {
     core.warning(`${event.ref} is associated with too many pull requests.`)
   }
 
-  await exec('npm install @commitlint/core')
-
   core.notice('loading configuration')
   const commitlintConfig = await load()
 
